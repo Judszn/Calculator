@@ -1,93 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="bootstrap-4.6.2-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="flex flex-col justify-center items-center h-[100vh] w-[100%] border bg-gradient-to-r from-cyan-500 to-blue-500"
+  >
+    <div class="m-2 calculator">
+      <div
+        class="flex flex-row text-right justify-end text-xl calculator_display"
+      >
+        <p id="defaultValue">0</p>
+      </div>
 
-
-    <style>
-
-        .first-row{
-            background-color: gray;
-            height: 10vh;
-            padding: 10px;
-            color: #fff;
-            border: 1px solid gray;
-            font-size: 350%;
-            margin-top: 5vh;
-
-        }
-
-        .light-gray{
-            background-color: lightgray;
-            height: 10vh;
-            padding: 10px;
-            color: #000;
-            border: 1px solid gray;
-            font-size: 350%;
-        }
-
-
-        .orange{
-            background-color: orange;
-            height: 10vh;
-            padding: 10px;
-            color: #fff;
-            /* border: 1px solid gray; */
-            font-size: 350%;
-        }
-
-
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-           <div class="col-md-12 first-row text-right">0</div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 light-gray text-center"> AC</div>
-            <div class="col-md-3 light-gray text-center">+/-</div>
-            <div class="col-md-3 light-gray text-center">%</div>
-            <div class="col-md-3 orange text-center">&divide</div>
+      <div
+        class="container flex justify-around flex-row w-[30%] calculator_keys"
+      >
+        <div class="row flex flex-col justify-between">
+          <div
+            class="light-gray flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button class="key_equals" data-action="calculate">=</button>
+          </div>
+          <div
+            class="light-gray flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button>7</button>
+          </div>
+          <div
+            class="light-gray flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button>4</button>
+          </div>
+          <div
+            class="orange flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button>1</button>
+          </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-3 light-gray text-center">7</div>
-            <div class="col-md-3 light-gray text-center">8</div>
-            <div class="col-md-3 light-gray text-center">9</div>
-            <div class="col-md-3 orange text-center">&times</div>
+        <div class="row flex flex-col justify-between">
+          <div
+            class="light-gray flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button data-action="clear" class="key_operator">AC</button>
+          </div>
+          <div
+            class="light-gray flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button>8</button>
+          </div>
+          <div
+            class="light-gray flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button>5</button>
+          </div>
+          <div
+            class="orange flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button>2</button>
+          </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-3 light-gray text-center"> 4</div>
-            <div class="col-md-3 light-gray text-center">5</div>
-            <div class="col-md-3 light-gray text-center">6</div>
-            <div class="col-md-3 orange text-center">-</div>
+        <div class="row flex flex-col justify-between">
+          <div
+            class="light-gray flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button>0</button>
+          </div>
+          <div
+            class="light-gray flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button>9</button>
+          </div>
+          <div
+            class="light-gray flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button>6</button>
+          </div>
+          <div
+            class="orange flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button>3</button>
+          </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-3 light-gray text-center"> 1</div>
-            <div class="col-md-3 light-gray text-center">2</div>
-            <div class="col-md-3 light-gray text-center">3</div>
-            <div class="col-md-3 orange text-center">+</div>
+        <div class="row flex flex-col justify-">
+          <div
+            class="light-gray flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button data-action="divide" class="key_operator">&divide</button>
+          </div>
+          <div
+            class="light-gray flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button data-action="multiply" class="key_operator">&times</button>
+          </div>
+          <div
+            class="light-gray flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button data-action="subtract" class="key_operator">-</button>
+          </div>
+          <div
+            class="orange flex justify-center items-center p-16 w-3 h-3 rounded-full bg-slate-200 text-2xl m-2"
+          >
+            <button data-action="add" class="key_operator">+</button>
+          </div>
         </div>
-
-
-        <div class="row">
-            <div class="col-md-6 light-gray text-center"> 0</div>
-            <div class="col-md-3 light-gray text-center">.</div>
-            <div class="col-md-3 orange text-center">=</div>
-            
-        </div>
-
+      </div>
     </div>
 
-
-
-    <script src="bootstrap-4.6.2-dist/js/jquery-3.7.1.min.js"></script>
-    <script src="bootstrap-4.6.2-dist/js/bootstrap.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
